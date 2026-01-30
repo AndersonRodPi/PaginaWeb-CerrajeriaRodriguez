@@ -16,6 +16,7 @@ body {
     padding: 0 2rem;
 }
 
+/* --- HEADER --- */
 .header {
     background: #1a2332;
     color: white;
@@ -38,21 +39,10 @@ body {
     gap: 1rem;
 }
 
-.logo-icon {
-    width: 40px;
-    height: 40px;
-    color: #ffd700;
-}
-
-.logo-text h1 {
-    font-size: 1.5rem;
-    margin: 0;
-}
-
-.logo-text p {
-    font-size: 0.85rem;
-    color: #cbd5e0;
-    margin: 0;
+.logo img {
+    height: 60px; /* Ajusta este número según prefieras (50px a 80px es lo normal) */
+    width: auto;  /* Esto evita que la imagen se deforme */
+    display: block;
 }
 
 .nav-desktop ul {
@@ -113,6 +103,7 @@ body {
     display: block;
 }
 
+/* --- HERO --- */
 .hero {
     background: linear-gradient(135deg, #1a2332 0%, #2d3748 100%);
     color: white;
@@ -151,6 +142,7 @@ body {
     gap: 0.5rem;
     transition: transform 0.3s, box-shadow 0.3s;
     box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+    text-decoration: none;
 }
 
 .btn-primary svg {
@@ -163,6 +155,7 @@ body {
     box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5);
 }
 
+/* --- ABOUT --- */
 .about {
     padding: 4rem 2rem;
     background: #f7fafc;
@@ -228,6 +221,7 @@ body {
     border-bottom: none;
 }
 
+/* --- SERVICES --- */
 .services {
     padding: 4rem 2rem;
     background: white;
@@ -241,11 +235,14 @@ body {
 
 .service-card {
     background: #f7fafc;
-    padding: 2rem;
-    border-radius: 10px;
+    padding: 1.5rem; /* Ajustado para que la imagen luzca mejor */
+    border-radius: 12px;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
-    border: 2px solid transparent;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .service-card:hover {
@@ -254,23 +251,46 @@ body {
     border-color: #1a2332;
 }
 
+/* Estilos nuevos para las imágenes */
+.card-image-container {
+    width: 100%;
+    height: 180px; /* Altura uniforme para todas las imágenes */
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.service-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantiene la proporción sin deformar */
+    transition: transform 0.4s ease;
+}
+
+.service-card:hover .service-img {
+    transform: scale(1.1); /* Zoom elegante al pasar el mouse */
+}
+
 .service-icon {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     color: #1a2332;
-    margin-bottom: 1rem;
+    margin: 0 auto 1rem auto;
 }
 
 .service-card h3 {
     color: #1a2332;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.3rem;
 }
 
 .service-card p {
     color: #4a5568;
-    line-height: 1.6;
+    line-height: 1.5;
+    font-size: 0.95rem;
 }
 
+/* --- CONTACT --- */
 .contact {
     padding: 4rem 2rem;
     background: #1a2332;
@@ -322,6 +342,7 @@ body {
     margin-top: 2rem;
 }
 
+/* --- FOOTER --- */
 .footer {
     background: #0f1419;
     color: #cbd5e0;
@@ -337,6 +358,7 @@ body {
     font-size: 0.9rem;
 }
 
+/* --- MEDIA QUERIES --- */
 @media (max-width: 768px) {
     .nav-desktop {
         display: none;
@@ -349,9 +371,13 @@ body {
     .services-grid {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
+    
+    .card-image-container {
+        height: 160px; /* Un poco más pequeña en móviles */
+    }
 }
 
-/* WhatsApp Widget */
+/* --- WHATSAPP WIDGET --- */
 .whatsapp-wrapper { position: fixed; bottom: 20px; right: 20px; z-index: 9999; }
 .whatsapp-btn { 
     background: #25d366; color: white; border: none; padding: 12px 20px; 
